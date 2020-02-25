@@ -1,11 +1,35 @@
-# `theme`
+# Plain.css
+💅🏻Highly resuable, flexible styles. Build with **SASS**、**Storybook**
 
-> TODO: description
-
-## Usage
-
+## Useage
+```sh
+$ yarn add plain.css
 ```
-const theme = require('theme');
 
-// TODO: DEMONSTRATE API
-```
+## TODO
+- support
+  - variables
+    - color sytstem 🔨
+    - layout ✅
+    - typography 🔨
+    - components ❎
+  - mixins
+    - components ❎
+    - layout ✅
+    - shape ❎
+    - typography ❎
+- layout
+  - container ✅
+  - grid - 24 ✅
+- base — 应用必须的基本样式
+  - typography 🔨
+  - normalize ✅
+  - base reset css 🔨
+- utilties
+  - animations ❎
+  - border ✅
+  - box 🔨
+  - margin ✅
+  - padding ✅
+  - typography ❎
+  - layout 🔨

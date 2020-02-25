@@ -16,11 +16,7 @@
   "files": [
     "src"
   ],
-  "publishConfig": {
-    "registry": "http://repository.devops.vanke.com/repository/npm-hosted/"
-  },
   "scripts": {
-    "test": "echo \"Error: run tests from root\" && exit 1",
     "docs:dev": "vuepress dev docs",
     "docs:prod": "vuepress build docs",
     "storybook": "start-storybook -p 6006",
@@ -63,7 +59,6 @@
   "dependencies": {
     "normalize.css": "^8.0.1"
   },
-  "gitHead": "0c86a2617f38543c0644c7eb7e7eb96464cf21c0",
   "config": {
     "commitizen": {
       "path": "./node_modules/cz-conventional-changelog"
