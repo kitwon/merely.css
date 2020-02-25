@@ -1,13 +1,12 @@
 {
-  "name": "plain.css",
+  "name": "just.css",
   "version": "0.1.0",
-  "description": "lexue app theme",
+  "description": "Highly resuable, flexible styles",
   "keywords": [
     "sass"
   ],
-  "author": "Kitwang Chen <chenjh32@vanke.com>",
-  "homepage": "",
-  "license": "ISC",
+  "author": "Kitwang Chen <kitwang.c@outlook.com>",
+  "license": "MIT",
   "main": "src/index.scss",
   "directories": {
     "lib": "src",
