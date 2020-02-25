@@ -1,0 +1,7 @@
+@include b(c-input) {
+  @include when(round) {
+    .el-input__inner {
+      border-radius: 40px;
+    }
+  }
+}

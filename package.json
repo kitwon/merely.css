@@ -1,0 +1,72 @@
+{
+  "name": "plain.css",
+  "version": "0.1.0",
+  "description": "lexue app theme",
+  "keywords": [
+    "sass"
+  ],
+  "author": "Kitwang Chen <chenjh32@vanke.com>",
+  "homepage": "",
+  "license": "ISC",
+  "main": "src/index.scss",
+  "directories": {
+    "lib": "src",
+    "test": "__tests__"
+  },
+  "files": [
+    "src"
+  ],
+  "publishConfig": {
+    "registry": "http://repository.devops.vanke.com/repository/npm-hosted/"
+  },
+  "scripts": {
+    "test": "echo \"Error: run tests from root\" && exit 1",
+    "docs:dev": "vuepress dev docs",
+    "docs:prod": "vuepress build docs",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
+  },
+  "peerDependencies": {
+    "style-resources-loader": "^1.3.2"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.8.3",
+    "@storybook/addon-actions": "^5.3.6",
+    "@storybook/addon-links": "^5.3.6",
+    "@storybook/addon-viewport": "^5.3.9",
+    "@storybook/addons": "^5.3.6",
+    "@storybook/vue": "^5.3.6",
+    "@types/jest": "^24.0.19",
+    "@vue/cli-plugin-babel": "^4.1.0",
+    "@vue/cli-plugin-eslint": "^4.1.0",
+    "@vue/cli-plugin-typescript": "^4.1.0",
+    "@vue/cli-plugin-unit-jest": "^4.1.0",
+    "@vue/cli-service": "^4.1.0",
+    "autoprefixer": "^9.7.4",
+    "babel-loader": "^8.0.6",
+    "babel-preset-vue": "^2.0.2",
+    "code-blocks": "^1.1.0",
+    "cz-conventional-changelog": "3.1.0",
+    "rehype-format": "^3.0.0",
+    "rehype-stringify": "^6.0.1",
+    "remark-containers": "^1.1.2",
+    "remark-parse": "^7.0.2",
+    "remark-rehype": "^5.0.0",
+    "sass": "^1.25.0",
+    "sass-loader": "^8.0.2",
+    "unified": "^8.4.2",
+    "vuepress": "^1.2.0",
+    "vuepress-plugin-demo-code": "^0.5.0",
+    "webpack": "^4.41.5",
+    "webpack-chain": "^6.0.0"
+  },
+  "dependencies": {
+    "normalize.css": "^8.0.1"
+  },
+  "gitHead": "0c86a2617f38543c0644c7eb7e7eb96464cf21c0",
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  }
+}
