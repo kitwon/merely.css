@@ -3,6 +3,7 @@ import { name, version } from '../package.json'
 import { configure, addParameters } from '@storybook/vue'
 import { INITIAL_VIEWPORTS } from '@storybook/addon-viewport'
 
+// Merely.css
 import "../src/index.scss";
 
 addParameters({
@@ -34,7 +35,7 @@ addParameters({
 })
 
 configure(() => {
-  const loadMarkdown = require.context('../docs', true, /\.md$/)
+  const loadMarkdown = require.context('../docs/content', true, /\.md$/)
   for (const path of loadMarkdown.keys()) {
     loadMarkdown(path)
   }
