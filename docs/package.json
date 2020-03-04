@@ -5,12 +5,16 @@
   "version": "0.1.0",
   "author": "Kyle Mathews <mathews.kyle@gmail.com>",
   "dependencies": {
+    "@mdx-js/mdx": "^1.5.7",
+    "@mdx-js/react": "^1.5.7",
     "gatsby": "^2.19.7",
+    "gatsby-plugin-mdx": "^1.0.74",
     "gatsby-theme-apollo-docs": "^4.0.7",
     "prop-types": "^15.7.2",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
-    "react-helmet": "^5.2.1"
+    "react-helmet": "^5.2.1",
+    "react-live": "^2.2.2"
   },
   "devDependencies": {
     "prettier": "^1.19.1"
