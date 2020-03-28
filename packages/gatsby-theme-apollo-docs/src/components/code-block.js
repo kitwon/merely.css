@@ -3,8 +3,11 @@ import React, {useRef} from 'react';
 import styled from '@emotion/styled';
 import useCopyToClipboard from 'react-use/lib/useCopyToClipboard';
 import {Button} from '@apollo/space-kit/Button';
-import { MultiCodeBlockContext } from 'gatsby-theme-apollo-docs/src/components/multi-code-block';
-import {Select} from 'gatsby-theme-apollo-docs/src/components/select';
+import {
+  GA_EVENT_CATEGORY_CODE_BLOCK,
+  MultiCodeBlockContext
+} from './multi-code-block';
+import {Select} from './select';
 import {colors} from 'gatsby-theme-apollo-core';
 
 const Container = styled.div({
@@ -35,8 +38,13 @@ export default function CodeBlock(props) {
   const code = useRef();
   const [copied, copyToClipboard] = useCopyToClipboard();
 
-  console.log(props)
   function handleCopy() {
+    if (typeof window.analytics !== 'undefined') {
+      window.analytics.track('Copy', {
+        category: GA_EVENT_CATEGORY_CODE_BLOCK
+      });
+    }
+
     copyToClipboard(code.current.innerText);
   }
 
@@ -66,7 +74,6 @@ export default function CodeBlock(props) {
           {copied.value ? 'Copied!' : 'Copy'}
         </Button>
       </Header>
-      
       <InnerContainer>
         <pre className={props.className} ref={code}>
           {props.children}

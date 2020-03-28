@@ -1,20 +1,20 @@
 {
-  "name": "gatsby-starter-default",
+  "name": "merely.css-docs",
   "private": true,
-  "description": "A simple starter to get up and developing quickly with Gatsby",
+  "description": "Docs for Merely.css",
   "version": "0.1.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "author": "Kitwang Chen <kitwang.c@gmail.com>",
   "dependencies": {
     "@mdx-js/mdx": "^1.5.7",
     "@mdx-js/react": "^1.5.7",
     "gatsby": "^2.19.7",
     "gatsby-plugin-mdx": "^1.0.74",
-    "gatsby-theme-apollo-docs": "^4.0.7",
     "prop-types": "^15.7.2",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
     "react-helmet": "^5.2.1",
-    "react-live": "^2.2.2"
+    "react-live": "^2.2.2",
+    "remark-typescript": "^0.3.1"
   },
   "devDependencies": {
     "prettier": "^1.19.1"
@@ -31,12 +31,5 @@
     "serve": "gatsby serve",
     "clean": "gatsby clean",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/gatsbyjs/gatsby-starter-default"
-  },
-  "bugs": {
-    "url": "https://github.com/gatsbyjs/gatsby/issues"
   }
 }

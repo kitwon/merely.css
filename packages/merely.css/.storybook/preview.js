@@ -1,10 +1,15 @@
-import Vue from 'vue'
+import React from 'react'
 import { name, version } from '../package.json'
-import { configure, addParameters } from '@storybook/vue'
+import { configure, addParameters, addDecorator, setAddon } from '@storybook/react'
 import { INITIAL_VIEWPORTS } from '@storybook/addon-viewport'
+import chaptersAddon from 'react-storybook-addon-chapters'
+
+setAddon(chaptersAddon)
 
 // Merely.css
 import "../src/index.scss";
+
+addDecorator(story => <div className="p-4">{story()}</div>)
 
 addParameters({
   options: {
@@ -35,7 +40,7 @@ addParameters({
 })
 
 configure(() => {
-  const loadMarkdown = require.context('../docs/content', true, /\.md$/)
+  const loadMarkdown = require.context('../docs/content', true, /\.md(x)?$/)
   for (const path of loadMarkdown.keys()) {
     loadMarkdown(path)
   }

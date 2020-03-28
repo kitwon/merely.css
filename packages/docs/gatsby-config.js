@@ -6,7 +6,7 @@ module.exports = {
   },
   plugins: [
     {
-      resolve: 'gatsby-theme-apollo-docs',
+      resolve: '@kitwang/gatsby-theme-apollo-docs',
       options: {
         root: __dirname,
         siteName: 'Merely.css',

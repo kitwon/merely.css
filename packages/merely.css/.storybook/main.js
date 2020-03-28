@@ -11,7 +11,7 @@ module.exports = {
     })
 
     config.module.rules.push({
-      test: /\.md$/i,
+      test: /\.mdx?$/i,
       include: pagePath,
       loaders: [
         babel,
