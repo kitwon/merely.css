@@ -1,6 +1,10 @@
 {
   "name": "merely.css",
   "version": "0.1.0",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
   "description": "Highly resuable, flexible styles",
   "keywords": [
     "sass"
@@ -17,8 +21,8 @@
   ],
   "scripts": {
     "init": "yarn && cd docs && yan",
-    "docs:dev": "cd docs && npm run develop",
-    "docs:prod": "cd docs && npm run build",
+    "docs:dev": "cd packages/docs && npm run develop",
+    "docs:prod": "cd packages/docs && npm run build",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook"
   },

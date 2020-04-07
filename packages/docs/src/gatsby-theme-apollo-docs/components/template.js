@@ -1,16 +1,16 @@
-import CodeBlock from './code-block';
-import CustomSEO from './custom-seo';
-import Footer from './footer';
+import CodeBlock from 'gatsby-theme-apollo-docs/src/components/code-block';
+import CustomSEO from 'gatsby-theme-apollo-docs/src/components/custom-seo';
+import Footer from 'gatsby-theme-apollo-docs/src/components/footer';
 import MDXRenderer from 'gatsby-plugin-mdx/mdx-renderer';
-import PageContent from './page-content';
-import PageHeader from './page-header';
+import PageContent from 'gatsby-theme-apollo-docs/src/components/page-content';
+import PageHeader from 'gatsby-theme-apollo-docs/src/components/page-header';
 import PropTypes from 'prop-types';
 import React, {Fragment, createContext, useContext} from 'react';
 import rehypeReact from 'rehype-react';
 import styled from '@emotion/styled';
 import {ContentWrapper, colors, smallCaps} from 'gatsby-theme-apollo-core';
 import {MDXProvider} from '@mdx-js/react';
-import {TypescriptApiBoxContext} from './typescript-api-box';
+import {TypescriptApiBoxContext} from 'gatsby-theme-apollo-docs/src/components/typescript-api-box';
 import {graphql, navigate} from 'gatsby';
 
 const StyledContentWrapper = styled(ContentWrapper)({
@@ -71,6 +71,10 @@ const StyledTable = styled.table({
   },
   td: {
     verticalAlign: 'top',
+    p: {
+      fontSize: 'inherit',
+      lineHeight: 'inherit'
+    },
     code: {
       whiteSpace: 'normal'
     }
@@ -96,7 +100,10 @@ const renderAst = new rehypeReact({
   components
 }).Compiler;
 
+export const CodeStringContext = createContext([])
+
 export default function Template(props) {
+  console.log(props)
   const {hash, pathname} = props.location;
   const {file, site} = props.data;
   const {frontmatter, headings, fields} =
@@ -146,9 +153,11 @@ export default function Template(props) {
           >
             {file.childMdx ? (
               <TypescriptApiBoxContext.Provider value={typescriptApiBox}>
-                <MDXProvider components={components}>
-                  <MDXRenderer>{file.childMdx.body}</MDXRenderer>
-                </MDXProvider>
+                <CodeStringContext.Provider value={file.childMdx.mdxAST.children}>
+                  <MDXProvider components={components}>
+                    <MDXRenderer>{file.childMdx.body}</MDXRenderer>
+                  </MDXProvider>
+              </CodeStringContext.Provider>
               </TypescriptApiBoxContext.Provider>
             ) : (
               renderAst(file.childMarkdownRemark.htmlAst)
@@ -168,7 +177,7 @@ Template.propTypes = {
 };
 
 export const pageQuery = graphql`
-  query PageQuery($id: String) {
+  query pageQueryAndPageQuery($id: String) {
     site {
       pathPrefix
       siteMetadata {
@@ -203,6 +212,7 @@ export const pageQuery = graphql`
           image
           graphManagerUrl
         }
+        mdxAST
         body
       }
     }

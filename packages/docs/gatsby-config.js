@@ -1,3 +1,5 @@
+const path = require('path')
+
 module.exports = {
   siteMetadata: {
     title: `Gatsby Default Starter`,
@@ -5,20 +7,21 @@ module.exports = {
     author: `@gatsbyjs`,
   },
   plugins: [
+    'gatsby-plugin-sass',
     {
-      resolve: '@kitwang/gatsby-theme-apollo-docs',
+      resolve: 'gatsby-theme-apollo-docs',
       options: {
         root: __dirname,
         siteName: 'Merely.css',
         description: '💅🏻Highly resuable, flexible styles. Build with SASS、Storybook',
         sidebarCategories: {
           null: [
-            'index'
+            'index',
           ],
           Utilities: [
-            'utilities/grid',
             'utilities/border',
-            'utilities/padding',
+            'utilities/grid',
+            'utilities/padding'
           ]
         }
       }
